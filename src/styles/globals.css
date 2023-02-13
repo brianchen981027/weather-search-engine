@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Share Tech Mono", monospace;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.search button {
+  @apply text-[#FFFAF0] border-[#00477D] bg-[#00477D];
+}
+
+.search .ant-btn-primary:hover {
+  @apply bg-transparent text-[#00477D] border-[#00477D];
+}
+
+.result {
+  @apply p-3 xs:p-5 border-b-[#082567] border-b-[1.5px] border-dotted;
+}
+
+.result .ant-col h2,
+.lastResult .ant-col h2 {
+  @apply w-max text-[18px] xs:text-[20px] sm:text-[20px] lg:text-[28px] text-[#082567] font-bold;
+}
+
+.result .ant-col h3,
+.lastResult .ant-col h3 {
+  @apply w-max text-[16px] xs:text-[18px] sm:text-[18px] lg:text-[24px] text-[#082567] font-semibold float-right;
+}
+
+.result .ant-col h3:hover,
+.lastResult .ant-col h3:hover {
+  @apply font-bold;
+}
+
+.footerIcon {
+  @apply text-3xl text-[#FFFAF0] px-2 hover:text-[#D1EDF2];
+}

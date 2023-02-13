@@ -1,0 +1,74 @@
+{
+    "generalConfiguration.sortOnBeforeSave": true,
+    "importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+    "importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 100,
+    "importStringConfiguration.tabSize": 2,
+    "importStringConfiguration.quoteMark": "single",
+    "sortConfiguration.customOrderingRules.defaultNumberOfEmptyLinesAfterGroup": 1,
+    "importSorter.sortConfiguration.customOrderingRules.defaultOrderLevel": 20,
+    "importSorter.sortConfiguration.customOrderingRules.rules": [
+      {
+        "type": "importMember",
+        "regex": "^$",
+        "orderLevel": 10,
+        "disableSort": true
+      },
+      {
+        "regex": "^react",
+        "orderLevel": 10
+      },
+      {
+        "regex": "^gatsby",
+        "orderLevel": 20
+      },
+      {
+        "regex": "^antd",
+        "orderLevel": 20
+      },
+      {
+        "regex": "^@/Constants|^@/Contexts|^@/Hooks|^@/Interface|^@/Selectors",
+        "orderLevel": 30
+      },
+      {
+        "regex": "^@/Sagas|^@/Slices|^@/Redux",
+        "orderLevel": 40
+      },
+      {
+        "regex": "^@/Apollo|^@/Axios|^@/Elastic",
+        "orderLevel": 50
+      },
+      {
+        "regex": "^@/Pages",
+        "orderLevel": 60
+      },
+      {
+        "regex": "^@/Stories_modules",
+        "orderLevel": 70
+      },
+      {
+        "regex": "^@/Stories_components",
+        "orderLevel": 70
+      },
+      {
+        "regex": "^@/Styles|^@/Utils",
+        "orderLevel": 90
+      },
+      {
+        "regex": "^@/Images",
+        "orderLevel": 100
+      },
+      {
+        "regex": "^@/",
+        "orderLevel": 80
+      },
+      {
+        "regex": "^[@]",
+        "orderLevel": 20
+      },
+      {
+        "regex": "^[.]",
+        "orderLevel": 100
+      }
+    ]
+  }
+  

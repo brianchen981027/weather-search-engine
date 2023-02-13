@@ -7,19 +7,12 @@ import { useAppDispatch, useAppSelector } from '@/Hooks/useRedux';
 
 import { getWeather } from '@/Slices/commonSlice';
 
-const SearhResult = () => {
+const SearchResult = () => {
   const dispatch = useAppDispatch();
   const { weatherData } = useAppSelector((state) => state.common.value);
   const {
-    base,
-    clouds,
-    cod,
-    coord,
-    dt,
-    id,
     main,
     name,
-    rain,
     sys,
     visibility,
     weather,
@@ -258,4 +251,4 @@ const SearhResult = () => {
   );
 };
 
-export default SearhResult;
+export default SearchResult;

@@ -32,6 +32,8 @@ const getCityAPI = ({ countryCode }: CityRequestProps) =>
   axiosCountyInstance.get(`/countries/${countryCode}/cities`);
 
 const getWeatherAPI = ({ country, city }: WeatherRequestProps) =>
-  axiosWeatherInstance.get(`?q=${city},${country}&appid=${WEATHER_APIKEY}`);
+  axiosWeatherInstance.get(
+    `?q=${city},${country}&lang=zh_tw&appid=${WEATHER_APIKEY}`
+  );
 
 export { getCountryAPI, getCityAPI, getWeatherAPI };

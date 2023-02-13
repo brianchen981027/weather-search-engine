@@ -1,12 +1,14 @@
-import { Inter } from '@next/font/google';
 import Head from 'next/head';
-import Image from 'next/image';
+
+import { useAppSelector } from '@/Hooks/useRedux';
 
 import Content from '@/Components/Content';
 import Footer from '@/Components/Footer';
 import Header from '@/Components/Header';
+import Loader from '@/Components/Loader';
 
 const Home = (): JSX.Element => {
+  const { isLoading } = useAppSelector((state) => state.common.value);
   return (
     <>
       <Head>
@@ -16,7 +18,8 @@ const Home = (): JSX.Element => {
         <link rel="icon" href="/weatherIcon.ico" />
       </Head>
       <main className="bg-[url('../images/WeatherBg.jpg')] bg-cover bg-center h-full">
-        <Header/>
+        {isLoading && <Loader isLoading={isLoading} />}
+        <Header />
         <Content />
       </main>
       <Footer />

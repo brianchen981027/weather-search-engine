@@ -6,21 +6,21 @@ import { useAppDispatch, useAppSelector } from '@/Hooks/useRedux';
 
 import { getAllCountry, getCity, getWeather } from '@/Slices/commonSlice';
 
-import SearhResult from './SearhResult';
+import SearchResult from './SearchResult';
 
 const Content = () => {
   const dispatch = useAppDispatch();
-  const { country, city } = useAppSelector((state) => state.common.value);
+  const { country, city, isLoading } = useAppSelector(
+    (state) => state.common.value
+  );
 
   const [countryValue, setCountryValue] = useState();
-  const [countryOptions, setCountryOptions] = useState<
-    Array<{ value: string; label: string }>
-  >();
+  const [countryOptions, setCountryOptions] =
+    useState<Array<{ value: string; label: string }>>();
 
   const [cityValue, setCityValue] = useState();
-  const [cityOptions, setCityOptions] = useState<
-    Array<{ value: string; label: string }>
-  >();
+  const [cityOptions, setCityOptions] =
+    useState<Array<{ value: string; label: string }>>();
 
   useEffect(() => {
     if (!country.length) {
@@ -66,9 +66,9 @@ const Content = () => {
               Country：
             </h1>
             <Select
-              showSearch
               className="w-full md:w-[25vw]"
               placeholder="Select the Country"
+              loading={isLoading}
               optionFilterProp="children"
               onChange={(value) => {
                 console.log("value: ", value);
@@ -81,6 +81,7 @@ const Content = () => {
                   .includes(input.toLowerCase())
               }
               options={countryOptions}
+              virtual={false}
             />
           </div>
           <div className="flex w-full mt-5 md:w-fit md:mt-0">
@@ -88,10 +89,10 @@ const Content = () => {
               City：
             </h1>
             <Select
-              showSearch
               className="w-full md:w-[25vw]"
               placeholder="Select the City"
               optionFilterProp="children"
+              loading={isLoading}
               onChange={(value) => setCityValue(value)}
               filterOption={(input, option) =>
                 (option?.label ?? "")
@@ -99,6 +100,7 @@ const Content = () => {
                   .includes(input.toLowerCase())
               }
               options={cityOptions}
+              virtual={false}
             />
           </div>
           <Button
@@ -117,7 +119,7 @@ const Content = () => {
           </Button>
         </div>
       </div>
-      <SearhResult />
+      <SearchResult />
     </>
   );
 };

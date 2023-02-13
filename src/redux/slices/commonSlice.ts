@@ -5,13 +5,14 @@ import {
   CityResponseProps,
   CountryResponseProps,
   WeatherRequestProps,
-  WeatherResponceProps
+  WeatherResponseProps
 } from '@/Interfaces/index';
 
 interface ValueProps {
   city: Array<CityResponseProps>;
   country: Array<CountryResponseProps>;
-  weatherData: WeatherResponceProps;
+  isLoading: boolean;
+  weatherData: WeatherResponseProps;
 }
 
 const commonSlice = createSlice({
@@ -20,6 +21,7 @@ const commonSlice = createSlice({
     value: {
       city: [],
       country: [],
+      isLoading: false,
       weatherData: {
         base: "",
         clouds: {
@@ -74,6 +76,9 @@ const commonSlice = createSlice({
     error: "",
   },
   reducers: {
+    setLoading: (state, action: PayloadAction<boolean>) => {
+      state.value.isLoading = action.payload;
+    },
     getAllCountry: () => {},
     getCity: (state, _action: PayloadAction<CityRequestProps>) => {
       const assignState = state;
@@ -99,6 +104,7 @@ const commonSlice = createSlice({
 });
 
 export const {
+  setLoading,
   getAllCountry,
   getCity,
   getWeather,

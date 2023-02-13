@@ -18,7 +18,7 @@ interface WeatherRequestProps {
   city: string;
 }
 
-interface WeatherResponceProps {
+interface WeatherResponseProps {
   base: string,
   clouds: {
     all: number
@@ -68,4 +68,4 @@ interface WeatherResponceProps {
   },
 }
 
-export type { CountryResponseProps, CityRequestProps, CityResponseProps, WeatherRequestProps, WeatherResponceProps };
+export type { CountryResponseProps, CityRequestProps, CityResponseProps, WeatherRequestProps, WeatherResponseProps };
